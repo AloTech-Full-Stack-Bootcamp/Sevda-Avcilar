@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/_header') -%>
+  <body>
+  
+    <!-- Navigation -->
+  <%- include('partials/_navigation') -%>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= allp.title %></h1>
+            <h2 class="subheading"><%= allp.detail %></h2>
+            <span class="meta">Posted by
+              <a href="#">Start Bootstrap</a>
+              <%= allp.dateCreated %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+          <p>Placeholder text by
+            <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by
+            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+            <div>
+              <a href="/allposts/edit/<%= allp._id %>" class="btn btn-primary" id="updateButton" >Update</a>
+              <a href="/allposts/<%= allp._id %>?_method=DELETE" onclick="return confirm('ARE YOU SURE?')" class="btn btn-primary" id="deleteButton">Delete</a>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <%- include('partials/_footer') -%>
+
+</body>
+
+</html>
