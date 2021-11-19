@@ -12,7 +12,7 @@ export function SeriesTracker(series) {
   this.add = function (serie) {
     //Pushing new serie
     this.series.push(serie);
-    //If serie is watched
+    //If serie has been watched
     if (serie.isWatched) {
       //We increase the value of numberOfWatched by one
       this.numberOfWatched += 1;
@@ -20,7 +20,7 @@ export function SeriesTracker(series) {
       if (this.lastSerie === undefined) {
         this.lastSerie = serie;
       }
-      //If last serie exists, compare our serie and the existing last serie with dates
+      //If last serie exists, compare our serie and the existing last serie with their dates
       else {
         const finished1 = new Date(this.lastSerie.finishedDate);
         const finished2 = new Date(serie.finishedDate);
@@ -29,7 +29,7 @@ export function SeriesTracker(series) {
         }
       }
     }
-    //If serie didn't watched
+    //If serie has not been watched
     else {
       //Checking if current serie and next serie exist
       if (this.currentSerie === undefined) {
@@ -47,14 +47,14 @@ export function SeriesTracker(series) {
     });
   }
   this.finishSerie = function () {
-    //Our current serie is being the last serie, because we watched it
+    //Our current serie is being the last serie. Because we watched it
     this.lastSerie = this.currentSerie;
     //Finding index of the last serie, we need it for the currentSerie and nextSerie
     const result = this.series.findIndex(
       (obj) => obj.name === this.lastSerie.name
     );
 
-    let count = 0; //Count is for; Starting from the currentSerie's index for finding nextSerie
+    let count = 0; //Count is for starting from the currentSerie's index for finding nextSerie
     //Finding currentSerie
     for (let i = result + 1; i < this.series.length; i++) {
       if (this.series[i].finishedDate === undefined) {
