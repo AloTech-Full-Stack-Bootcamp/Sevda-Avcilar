@@ -109,7 +109,7 @@ function TodoList() {
       <footer className="footer" hidden={todos.length === 0}>
         <span className="todo-count">
           <strong>
-            {//Counting the elements with isCompleted=false}
+            {/*Counting the elements with isCompleted=false*/}
             {todos.filter((item) => item.isCompleted === false).length}
           </strong>{" "}
           items left
