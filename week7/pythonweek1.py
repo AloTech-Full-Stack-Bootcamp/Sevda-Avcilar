@@ -1,6 +1,6 @@
 from random import randint
 
-
+""" Gets n random numbers with 6 digits"""
 def random_number_generator(n, l=6):
     numbers = set()
     for i in range(n):
@@ -19,13 +19,13 @@ def random_number_generator(n, l=6):
 """generator = random_number_generator(6)
 print(list(generator))"""
 
-
+""" Gets the digits from mod_batch and incerements 1"""
 def my_awesome_decorator(fun):
     def wrapped(*args):
         return fun(*[i+1 for i in args])
     return wrapped
 
-
+"""Checks if the digits divisible by 3"""
 @my_awesome_decorator
 def mod_batch(*numbers):
     return all([True if i % 3 == 0 else False for i in numbers])
