@@ -22,7 +22,7 @@ print(list(generator))"""
 """ Gets the digits from mod_batch and incerements 1"""
 def my_awesome_decorator(fun):
     def wrapped(*args):
-        return fun(*[i+1 for i in args])
+        return not fun(*[i+1 for i in args])
     return wrapped
 
 """Checks if the digits divisible by 3"""
